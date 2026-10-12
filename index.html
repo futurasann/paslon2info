@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Digital Paslon 2 - OSIS SMK PGRI 2 Cianjur</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2140; --muted:#6b7090; --bg:#f4f6fd; --card:#fff;
+  --brand:#4b5cff; --brand2:#8a4dff; --accent:#ff5c93; --sun:#ffc83d; --line:#e6e9f5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;padding:20px 12px 28px}
+.poster{max-width:640px;margin:0 auto;background:var(--card);border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(40,50,120,.15)}
+
+/* HERO */
+.hero{position:relative;text-align:center;color:#fff;padding:30px 24px 64px;
+  background:linear-gradient(135deg,var(--brand),var(--brand2) 60%,var(--accent));overflow:hidden}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.1)}
+.hero::before{width:260px;height:260px;right:-80px;top:-90px}
+.hero::after{width:180px;height:180px;left:-60px;bottom:-70px}
+.hero>*{position:relative;z-index:1}
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.92}
+.school{font-weight:700;font-size:1.05rem;margin-top:6px}
+.nomor{font-size:clamp(6.5rem,30vw,9.5rem);font-weight:800;line-height:1;margin:6px 0 0;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,#ffe6a8);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 14px rgba(0,0,0,.2))}
+.label{font-weight:700;letter-spacing:.2em;font-size:.85rem;margin-top:-4px}
+.slogan{display:inline-block;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(4px);padding:9px 20px;border-radius:999px;font-weight:600;font-size:.98rem}
+
+/* CALON */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px;margin-top:-40px;position:relative;z-index:2}
+.person{background:#fff;border-radius:22px;padding:22px 12px 18px;text-align:center;box-shadow:0 10px 28px rgba(40,50,120,.14);border:1px solid var(--line)}
+.foto{width:120px;height:120px;margin:0 auto 12px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-size:3.4rem;
+  background:linear-gradient(135deg,#e0e6ff,#ffe0ec);border:4px solid #fff;box-shadow:0 0 0 3px var(--accent)}
+.person:nth-child(2) .foto{box-shadow:0 0 0 3px var(--brand)}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.role{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:#eef0ff;padding:3px 12px;border-radius:999px}
+.person:nth-child(2) .role{color:var(--brand);background:#ffeaf2}
+.person h3{font-size:1.05rem;font-weight:700;margin-top:8px;line-height:1.3}
+.meta{font-size:.82rem;color:var(--muted);margin-top:4px}
+.meta b{color:var(--ink);font-weight:600}
+.motto{font-size:.82rem;font-style:italic;margin-top:10px;color:var(--ink);opacity:.8}
+
+/* SECTION */
+.sec{padding:30px 22px 0}
+.sec h2{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec h2::after{content:'';flex:1;height:1px;background:var(--line)}
+
+.visi{background:linear-gradient(135deg,#f0f2ff,#fff0f6);border-radius:20px;padding:22px 24px;font-size:1.08rem;font-weight:600;line-height:1.55;position:relative}
+.visi::before{content:'“';position:absolute;top:-6px;left:12px;font-size:3.6rem;color:var(--brand);opacity:.35;line-height:1;font-family:Georgia,serif}
+.visi p{position:relative}
+
+ol.misi{list-style:none;counter-reset:m;display:grid;gap:10px}
+ol.misi li{counter-increment:m;display:flex;gap:14px;align-items:flex-start;font-size:.92rem;padding:2px 0}
+ol.misi li::before{content:counter(m);flex:none;width:28px;height:28px;border-radius:9px;background:var(--brand);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center;margin-top:1px}
+
+.proker{display:grid;gap:12px}
+.pk{border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;background:#fff;position:relative}
+.pk::before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:0 4px 4px 0;background:var(--c,var(--brand))}
+.pk:nth-child(1){--c:#22c39a}.pk:nth-child(2){--c:var(--brand)}.pk:nth-child(3){--c:var(--accent)}
+.pk h3{font-size:1.02rem;font-weight:700;display:flex;gap:8px;align-items:center}
+.pk h3 span{width:24px;height:24px;border-radius:50%;background:var(--c);color:#fff;font-size:.75rem;display:grid;place-items:center;flex:none}
+.pk p{font-size:.88rem;color:var(--muted);margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.tags span{font-size:.78rem;font-weight:500;padding:4px 12px;border-radius:999px;background:#f3f5fc;border:1px solid var(--line)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;font-size:.78rem;font-weight:600}
+.flow span{background:#eef0ff;color:var(--brand);padding:4px 11px;border-radius:999px}
+.flow i{font-style:normal;color:var(--muted)}
+.note{margin-top:12px;font-size:.82rem;font-weight:500;background:#f8f9fe;border-radius:12px;padding:8px 12px}
+
+/* CTA */
+.cta{margin:30px 20px 0;text-align:center;color:#fff;border-radius:22px;padding:26px 20px;background:linear-gradient(135deg,var(--accent),#ff8a3d)}
+.cta h2{font-size:1.4rem;font-weight:800;letter-spacing:-.01em}
+.cta p{font-size:.9rem;opacity:.95;margin-top:2px}
+.cta .tag{display:inline-block;margin-top:14px;background:#fff;color:var(--accent);font-weight:800;font-size:1rem;padding:8px 26px;border-radius:999px;letter-spacing:.06em}
+
+/* FOOTER */
+footer{margin-top:30px;background:var(--ink);color:#fff;text-align:center;padding:26px 16px 22px}
+.credit{display:inline-flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;flex:none}
+.logo svg,.logo img{width:100%;height:100%;object-fit:contain;display:block}
+.credit .t{text-align:left;line-height:1.2}
+.credit .t small{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.credit .t b{font-size:1.15rem;font-weight:700}
+footer p{margin-top:12px;font-size:.72rem;opacity:.6}
+
+@media(max-width:480px){
+  .duo{grid-template-columns:1fr;gap:12px;margin-top:-36px}
+  .foto{width:104px;height:104px}
+}
+@media print{body{background:#fff;padding:0}.poster{box-shadow:none;border-radius:0;max-width:none}}
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <section class="hero">
+    <div class="eyebrow">Pemilihan Ketua & Wakil OSIS 2026/2027</div>
+    <div class="school">SMK PGRI 2 Cianjur</div>
+    <div class="nomor">02</div>
+    <div class="label">NOMOR URUT 2</div>
+    <div class="slogan">“Smart Leadership for a Brighter School.”</div>
+  </section>
+
+  <section class="duo">
+    <div class="person">
+      <div class="foto"><img src="ketuaa.jpg" alt="Foto calon ketua" onerror="this.replaceWith('🧑‍🎤')"></div>
+      <span class="role">Calon Ketua</span>
+      <h3>Selda</h3>
+      <p class="meta"><b>XI MPLB</b></p>
+    </div>
+    <div class="person">
+      <div class="foto"><img src="wakill.jpg" alt="Foto calon wakil" onerror="this.replaceWith('👩‍🎨')"></div>
+      <span class="role">Calon Wakil</span>
+      <h3>Khalil</h3>
+      <p class="meta"><b>X PEMASARAN</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Visi</h2>
+    <div class="visi"><p>Menjadikan OSIS sebagai ruang tumbuh bagi siswa untuk berani punya ide, berani berkarya, dan berani membawa perubahan.</p></div>
+  </section>
+
+  <section class="sec">
+    <h2>Misi</h2>
+    <ol class="misi">
+      <li>Membuka ruang bagi siswa untuk menyampaikan ide, kritik, dan aspirasi tanpa merasa takut atau sungkan.</li>
+      <li>Menghadirkan kegiatan yang lebih kreatif, seru, dan relevan dengan minat siswa.</li>
+      <li>Membangun hubungan yang lebih dekat antara OSIS, siswa, dan sekolah.</li>
+      <li>Mendorong setiap siswa untuk berani menunjukkan bakat, potensi, dan kreativitasnya.</li>
+      <li>Membiasakan OSIS bekerja dengan aksi nyata, bukan hanya rencana.</li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <h2>Program Kerja</h2>
+    <div class="proker">
+      <div class="pk">
+        <h3><span>1</span>Green School Challenge 🌱</h3>
+        <p>Gerakan menjaga lingkungan sekolah dengan cara yang tidak membosankan.</p>
+        <div class="tags"><span>🧴 Bring Your Own Bottle</span><span>🧹 Jumat Bersih</span><span>♻️ Pemilahan Sampah</span><span>⭐ Tukar Sampah dengan Poin</span></div>
+      </div>
+      <div class="pk">
+        <h3><span>2</span>Student Voice 🗣️</h3>
+        <p>Kotak aspirasi versi modern. Siswa bisa menyampaikan kritik, saran, atau ide lewat Google Form + QR Code yang ditempel di sekolah, atau dengan membuat kotak aspirasi.</p>
+        <div class="flow"><span>Scan QR</span><i>→</i><span>Isi Form</span><i>→</i><span>OSIS Rekap</span><i>→</i><span>Disampaikan</span></div>
+        <div class="note">➡️ OSIS merekap dan menyampaikan hasilnya secara berkala.</div>
+      </div>
+      <div class="pk">
+        <h3><span>3</span>Kreativitas Siswa 📱</h3>
+        <p>Siswa mengirimkan poster digital, foto kegiatan positif, atau karya kreatif untuk dipajang di media sosial resmi sekolah, dengan izin pihak sekolah.</p>
+        <div class="note">💡 Bisa dilakukan secara online tanpa mengumpulkan semua siswa.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2>Suaramu, Perubahan Kita!</h2>
+    <p>Gunakan hak pilihmu dengan bijak 💖</p>
+    <span class="tag">COBLOS NO. 2</span>
+  </div>
+
+  <footer>
+    <div class="credit">
+      <div class="logo"><img src="orbixstudios.png" alt="Logo Orbix Studios" onerror="this.replaceWith(document.getElementById('logoFallback').content.cloneNode(true))"></div>
+      <div class="t"><small>Created by</small><b>Orbix Studios</b></div>
+    </div>
+    <p>© 2026 Orbix Studios</p>
+  </footer>
+</div>
+
+<template id="logoFallback">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Orbix Studios">
+    <defs><linearGradient id="og" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c8cff"/><stop offset="1" stop-color="#b44dff"/></linearGradient></defs>
+    <polygon points="50,6 90,28 90,72 50,94 10,72 10,28" fill="url(#og)"/>
+    <ellipse cx="50" cy="50" rx="34" ry="13" fill="none" stroke="#fff" stroke-width="5" transform="rotate(-28 50 50)"/>
+    <circle cx="50" cy="50" r="15" fill="#fff"/><circle cx="50" cy="50" r="7" fill="#6c4dff"/>
+    <circle cx="76" cy="36" r="5.5" fill="#ffd23f"/>
+  </svg>
+</template>
+
+</body>
+</html>
