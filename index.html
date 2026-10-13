@@ -4,90 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Poster Digital Paslon 2 - OSIS SMK PGRI 2 Cianjur</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Caveat:wght@500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!--
+  ============ CARA GANTI GAMBAR ============
+  Taruh file gambar di folder yang sama dengan file HTML ini, dengan nama:
+    sekolah.jpg        -> BACKGROUND paling atas (foto gedung sekolah)
+    ketuaa.jpg         -> foto calon ketua
+    wakill.jpg         -> foto calon wakil
+    logo-sekolah.png   -> logo sekolah (pojok kiri atas)
+    orbixstudios.png   -> logo Orbix Studios (footer)
+  Format .jpg / .jpeg / .png / .webp semuanya otomatis terbaca.
+  ===========================================
+-->
 <style>
 :root{
-  --ink:#1c2140; --muted:#6b7090; --bg:#f4f6fd; --card:#fff;
-  --brand:#4b5cff; --brand2:#8a4dff; --accent:#ff5c93; --sun:#ffc83d; --line:#e6e9f5;
+  --navy:#12275a; --navy2:#1c3a7c; --blue:#2f5fa8; --sky:#9fd0ff; --sky2:#d8ecff;
+  --hl:#bcd9f7; --yellow:#ffc928; --paper:#f5f8fc; --line:#d5e1f0; --muted:#53648a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;padding:20px 12px 28px}
-.poster{max-width:640px;margin:0 auto;background:var(--card);border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(40,50,120,.15)}
+body{font-family:'Poppins',sans-serif;color:var(--navy);background:#dfe9f6;line-height:1.55;padding:16px 10px 24px}
+.hand{font-family:'Caveat',cursive;font-weight:700}
+.poster{max-width:760px;margin:0 auto;background:var(--paper);border-radius:26px;overflow:hidden;box-shadow:0 24px 60px rgba(18,39,90,.28);position:relative}
 
-/* HERO */
-.hero{position:relative;text-align:center;color:#fff;padding:30px 24px 64px;
-  background:linear-gradient(135deg,var(--brand),var(--brand2) 60%,var(--accent));overflow:hidden}
-.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.1)}
-.hero::before{width:260px;height:260px;right:-80px;top:-90px}
-.hero::after{width:180px;height:180px;left:-60px;bottom:-70px}
-.hero>*{position:relative;z-index:1}
-.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;opacity:.92}
-.school{font-weight:700;font-size:1.05rem;margin-top:6px}
-.nomor{font-size:clamp(6.5rem,30vw,9.5rem);font-weight:800;line-height:1;margin:6px 0 0;letter-spacing:-.04em;
-  background:linear-gradient(180deg,#fff,#ffe6a8);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 14px rgba(0,0,0,.2))}
-.label{font-weight:700;letter-spacing:.2em;font-size:.85rem;margin-top:-4px}
-.slogan{display:inline-block;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(4px);padding:9px 20px;border-radius:999px;font-weight:600;font-size:.98rem}
+/* ===== HERO ===== */
+.hero{position:relative;padding:18px 18px 52px;overflow:hidden;isolation:isolate;
+  background:
+    radial-gradient(60px 28px at 18% 20%,#fff 60%,transparent 62%),
+    radial-gradient(90px 34px at 30% 24%,#fff 60%,transparent 62%),
+    radial-gradient(70px 28px at 78% 12%,#fff 60%,transparent 62%),
+    radial-gradient(100px 36px at 90% 30%,#fff 55%,transparent 60%),
+    linear-gradient(#6fb3f7,#b9dcff 55%,#e8f3ff)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.hero .veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(255,255,255,.0) 40%,rgba(255,255,255,.25))}
+.building{position:absolute;left:0;right:0;bottom:0;width:100%;height:46%;z-index:-2;opacity:.9}
 
-/* CALON */
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px;margin-top:-40px;position:relative;z-index:2}
-.person{background:#fff;border-radius:22px;padding:22px 12px 18px;text-align:center;box-shadow:0 10px 28px rgba(40,50,120,.14);border:1px solid var(--line)}
-.foto{width:120px;height:120px;margin:0 auto 12px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-size:3.4rem;
-  background:linear-gradient(135deg,#e0e6ff,#ffe0ec);border:4px solid #fff;box-shadow:0 0 0 3px var(--accent)}
-.person:nth-child(2) .foto{box-shadow:0 0 0 3px var(--brand)}
-.foto img{width:100%;height:100%;object-fit:cover;display:block}
-.role{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:#eef0ff;padding:3px 12px;border-radius:999px}
-.person:nth-child(2) .role{color:var(--brand);background:#ffeaf2}
-.person h3{font-size:1.05rem;font-weight:700;margin-top:8px;line-height:1.3}
-.meta{font-size:.82rem;color:var(--muted);margin-top:4px}
-.meta b{color:var(--ink);font-weight:600}
-.motto{font-size:.82rem;font-style:italic;margin-top:10px;color:var(--ink);opacity:.8}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:800;line-height:1.05;font-size:1.05rem;color:var(--navy);text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.brand img{height:50px;width:auto}
+.tl{text-align:right;font-size:1.35rem;line-height:1;color:var(--navy2);transform:rotate(-5deg);padding-top:4px;text-shadow:0 1px 0 rgba(255,255,255,.8)}
+.tl u{text-decoration-color:var(--yellow);text-decoration-thickness:3px;text-underline-offset:4px}
 
-/* SECTION */
-.sec{padding:30px 22px 0}
-.sec h2{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand);display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.sec h2::after{content:'';flex:1;height:1px;background:var(--line)}
+.titlebox{position:relative;text-align:center;margin:30px auto 0;max-width:520px}
+.crown{position:absolute;left:46%;top:-30px;width:58px;transform:rotate(-8deg)}
+.swoosh{position:absolute;left:-4%;top:-12%;width:108%;height:130%;z-index:0}
+.titlebox h1{position:relative;z-index:1;font-family:'Baloo 2';font-weight:800;font-size:clamp(3.2rem,15vw,5.6rem);line-height:.95;color:var(--navy);letter-spacing:-.01em;text-shadow:0 3px 0 rgba(255,255,255,.75)}
+.titlebox h2{position:relative;z-index:1;font-family:'Baloo 2';font-weight:800;font-size:clamp(1.8rem,8vw,2.8rem);line-height:1;color:var(--navy);margin-top:2px;transform:translateX(12%) rotate(-3deg);text-shadow:0 2px 0 rgba(255,255,255,.75)}
+.titlebox h2 b{color:var(--yellow);-webkit-text-stroke:2px var(--navy);paint-order:stroke fill;text-shadow:none}
 
-.visi{background:linear-gradient(135deg,#f0f2ff,#fff0f6);border-radius:20px;padding:22px 24px;font-size:1.08rem;font-weight:600;line-height:1.55;position:relative}
-.visi::before{content:'“';position:absolute;top:-6px;left:12px;font-size:3.6rem;color:var(--brand);opacity:.35;line-height:1;font-family:Georgia,serif}
-.visi p{position:relative}
+/* ===== CALON (foto bersih, tidak ada yang menutup) ===== */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;max-width:620px;margin-inline:auto}
+.pp{display:flex;flex-direction:column;align-items:center;text-align:center}
+.pp .note{font-size:1.25rem;line-height:1;color:var(--navy2);margin-bottom:8px;text-shadow:0 1px 0 rgba(255,255,255,.85)}
+.pp:nth-child(1) .note{transform:rotate(-4deg)}
+.pp:nth-child(2) .note{transform:rotate(4deg)}
+.frame{width:100%;aspect-ratio:3/3.8;border-radius:26px;border:5px solid #fff;overflow:hidden;box-shadow:0 14px 30px rgba(18,39,90,.35);display:grid;place-items:center;font-size:5rem;
+  background:linear-gradient(160deg,#c7e0ff,#8fbdf2)}
+.pp:nth-child(2) .frame{background:linear-gradient(160deg,#ffe9a8,#ffc928)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
+.role{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:700;font-size:.78rem;padding:3px 14px;border-radius:6px;transform:rotate(-2deg);box-shadow:0 3px 8px rgba(18,39,90,.25);margin-top:14px}
+.plate{width:100%;background:#fff;border-radius:16px;padding:8px 12px 9px;margin-top:8px;box-shadow:0 8px 18px rgba(18,39,90,.22)}
+.plate h3{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.3rem,5.6vw,1.9rem);line-height:1.1;color:var(--navy)}
+.plate span{display:block;font-size:.72rem;font-weight:600;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}
 
-ol.misi{list-style:none;counter-reset:m;display:grid;gap:10px}
-ol.misi li{counter-increment:m;display:flex;gap:14px;align-items:flex-start;font-size:.92rem;padding:2px 0}
-ol.misi li::before{content:counter(m);flex:none;width:28px;height:28px;border-radius:9px;background:var(--brand);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center;margin-top:1px}
+/* ===== PAPER ===== */
+.paper{position:relative;background:var(--paper);padding:38px 22px 8px}
+.paper::before{content:'';position:absolute;left:0;right:0;top:-18px;height:20px;
+  background:linear-gradient(135deg,var(--paper) 25%,transparent 25%) -10px 0/20px 20px,linear-gradient(225deg,var(--paper) 25%,transparent 25%) -10px 0/20px 20px}
 
-.proker{display:grid;gap:12px}
-.pk{border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;background:#fff;position:relative}
-.pk::before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:4px;border-radius:0 4px 4px 0;background:var(--c,var(--brand))}
-.pk:nth-child(1){--c:#22c39a}.pk:nth-child(2){--c:var(--brand)}.pk:nth-child(3){--c:var(--accent)}
-.pk h3{font-size:1.02rem;font-weight:700;display:flex;gap:8px;align-items:center}
-.pk h3 span{width:24px;height:24px;border-radius:50%;background:var(--c);color:#fff;font-size:.75rem;display:grid;place-items:center;flex:none}
-.pk p{font-size:.88rem;color:var(--muted);margin-top:6px}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-.tags span{font-size:.78rem;font-weight:500;padding:4px 12px;border-radius:999px;background:#f3f5fc;border:1px solid var(--line)}
-.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;font-size:.78rem;font-weight:600}
-.flow span{background:#eef0ff;color:var(--brand);padding:4px 11px;border-radius:999px}
-.flow i{font-style:normal;color:var(--muted)}
-.note{margin-top:12px;font-size:.82rem;font-weight:500;background:#f8f9fe;border-radius:12px;padding:8px 12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 34px;position:relative}
+.cols::after{content:'';position:absolute;left:50%;top:6px;bottom:6px;width:2px;background:var(--navy2);opacity:.5}
+.hd{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+.hd svg{width:42px;height:42px;flex:none}
+.hd h2{font-family:'Baloo 2';font-weight:800;font-size:2.1rem;line-height:1;background:linear-gradient(transparent 22%,var(--hl) 22%,var(--hl) 92%,transparent 92%);padding:0 12px 0 8px;border-radius:6px;transform:skew(-4deg)}
+.visi{font-size:1rem;color:#243a6e;font-weight:500;line-height:1.7}
+ol.misi{list-style:none;counter-reset:m;display:grid;gap:12px}
+ol.misi li{counter-increment:m;display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:#243a6e;line-height:1.5}
+ol.misi li::before{content:counter(m);flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;font-size:.9rem;display:grid;place-items:center;margin-top:-2px}
+.visi-note{margin-top:14px;font-size:1.55rem;line-height:1.05;color:var(--navy2);transform:rotate(-3deg);display:inline-block;border-bottom:4px solid var(--yellow);padding-bottom:4px}
 
-/* CTA */
-.cta{margin:30px 20px 0;text-align:center;color:#fff;border-radius:22px;padding:26px 20px;background:linear-gradient(135deg,var(--accent),#ff8a3d)}
-.cta h2{font-size:1.4rem;font-weight:800;letter-spacing:-.01em}
-.cta p{font-size:.9rem;opacity:.95;margin-top:2px}
-.cta .tag{display:inline-block;margin-top:14px;background:#fff;color:var(--accent);font-weight:800;font-size:1rem;padding:8px 26px;border-radius:999px;letter-spacing:.06em}
+.proker{margin-top:34px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pk{background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px 15px 15px;position:relative;box-shadow:0 6px 16px rgba(18,39,90,.07)}
+.pk .no{position:absolute;top:-14px;left:14px;background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:800;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;transform:rotate(-6deg);box-shadow:0 3px 8px rgba(18,39,90,.2)}
+.pk h3{font-family:'Baloo 2';font-weight:800;font-size:1.12rem;line-height:1.15;margin-top:10px}
+.pk p{font-size:.8rem;color:var(--muted);margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:.7rem;font-weight:600;background:var(--sky2);color:var(--navy2);padding:3px 9px;border-radius:999px}
+.flow{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:10px;font-size:.7rem;font-weight:700}
+.flow span{background:var(--navy2);color:#fff;padding:3px 9px;border-radius:999px}
+.flow i{font-style:normal;color:var(--blue)}
+.pk .tip{margin-top:10px;font-size:.74rem;font-weight:600;background:#fff6d6;border-left:4px solid var(--yellow);padding:6px 9px;border-radius:6px;color:#5b4a0b}
 
-/* FOOTER */
-footer{margin-top:30px;background:var(--ink);color:#fff;text-align:center;padding:26px 16px 22px}
-.credit{display:inline-flex;align-items:center;gap:12px}
-.logo{width:46px;height:46px;flex:none}
+.cta{position:relative;margin:34px 0 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:22px;padding:18px 22px;overflow:hidden}
+.cta::after{content:'';position:absolute;right:-30px;top:-40px;width:140px;height:140px;border-radius:50%;background:rgba(159,208,255,.15)}
+.cta .hand{font-size:1.9rem;line-height:1;position:relative;z-index:1}
+.cta .hand small{display:block;font-family:'Poppins';font-weight:500;font-size:.8rem;opacity:.85;margin-top:6px}
+.badge{position:relative;z-index:1;background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:800;font-size:1.25rem;padding:8px 22px;border-radius:999px;transform:rotate(-3deg);box-shadow:0 5px 0 rgba(0,0,0,.25)}
+
+/* ===== FOOTER ===== */
+.wave{display:block;width:100%;height:46px;margin-top:30px;background:var(--paper)}
+footer{background:var(--navy);color:#fff;text-align:center;padding:6px 16px 24px;margin-top:-1px}
+.spaced{display:flex;align-items:center;gap:14px;justify-content:center;font-size:.68rem;letter-spacing:.3em;opacity:.8;margin-bottom:18px}
+.spaced::before,.spaced::after{content:'';height:1px;width:14%;background:rgba(255,255,255,.5)}
+.credit{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);padding:8px 20px 8px 10px;border-radius:999px}
+.logo{width:44px;height:44px;flex:none}
 .logo svg,.logo img{width:100%;height:100%;object-fit:contain;display:block}
-.credit .t{text-align:left;line-height:1.2}
-.credit .t small{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
-.credit .t b{font-size:1.15rem;font-weight:700}
-footer p{margin-top:12px;font-size:.72rem;opacity:.6}
+.credit .t{text-align:left;line-height:1.15}
+.credit small{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.credit b{font-family:'Baloo 2';font-weight:700;font-size:1.2rem}
+footer p{margin-top:12px;font-size:.7rem;opacity:.55}
 
-@media(max-width:480px){
-  .duo{grid-template-columns:1fr;gap:12px;margin-top:-36px}
-  .foto{width:104px;height:104px}
+@media(max-width:620px){
+  .cols{grid-template-columns:1fr;gap:28px}
+  .cols::after{display:none}
+  .pgrid{grid-template-columns:1fr}
+  .duo{gap:10px}
+  .pp .note{font-size:1.05rem}
+  .frame{border-width:4px;border-radius:20px}
+  .plate{padding:6px 8px 7px}
+  .tl{font-size:1.1rem}
+  .brand{font-size:.9rem}.brand img{height:42px}
 }
 @media print{body{background:#fff;padding:0}.poster{box-shadow:none;border-radius:0;max-width:none}}
 </style>
@@ -96,76 +132,117 @@ footer p{margin-top:12px;font-size:.72rem;opacity:.6}
 
 <div class="poster">
 
+  <!-- ===== HERO ===== -->
   <section class="hero">
-    <div class="eyebrow">Pemilihan Ketua & Wakil OSIS 2026/2027</div>
-    <div class="school">SMK PGRI 2 Cianjur</div>
-    <div class="nomor">02</div>
-    <div class="label">NOMOR URUT 2</div>
-    <div class="slogan">“Smart Leadership for a Brighter School.”</div>
-  </section>
+    <svg class="building" viewBox="0 0 400 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <rect x="0" y="70" width="400" height="110" fill="#5f84bd"/>
+      <rect x="0" y="62" width="400" height="10" fill="#2c4f8f"/>
+      <g fill="#c9dcf5" opacity=".85">
+        <rect x="20" y="88" width="30" height="20"/><rect x="62" y="88" width="30" height="20"/><rect x="104" y="88" width="30" height="20"/><rect x="146" y="88" width="30" height="20"/><rect x="188" y="88" width="30" height="20"/><rect x="230" y="88" width="30" height="20"/><rect x="272" y="88" width="30" height="20"/><rect x="314" y="88" width="30" height="20"/><rect x="356" y="88" width="30" height="20"/>
+        <rect x="20" y="124" width="30" height="20"/><rect x="62" y="124" width="30" height="20"/><rect x="104" y="124" width="30" height="20"/><rect x="146" y="124" width="30" height="20"/><rect x="188" y="124" width="30" height="20"/><rect x="230" y="124" width="30" height="20"/><rect x="272" y="124" width="30" height="20"/><rect x="314" y="124" width="30" height="20"/><rect x="356" y="124" width="30" height="20"/>
+      </g>
+      <rect x="0" y="160" width="400" height="20" fill="#3f6aa8"/>
+    </svg>
+    <!-- BACKGROUND PALING ATAS: ganti dengan file sekolah.jpg -->
+    <img class="bg" data-base="sekolah" data-fallback="remove" alt="">
+    <div class="veil"></div>
 
-  <section class="duo">
-    <div class="person">
-      <div class="foto"><img src="ketuaa.jpg" alt="Foto calon ketua" onerror="this.replaceWith('🧑‍🎤')"></div>
-      <span class="role">Calon Ketua</span>
-      <h3>Selda</h3>
-      <p class="meta"><b>XI MPLB</b></p>
+    <div class="topbar">
+      <div class="brand">
+        <img data-base="logo-sekolah" data-fallback="remove" alt="">
+        <span>SMK PGRI 2<br>CIANJUR</span>
+      </div>
+      <div class="tl hand">Smart Leadership<br>for a <u>Brighter School.</u></div>
     </div>
-    <div class="person">
-      <div class="foto"><img src="wakill.jpg" alt="Foto calon wakil" onerror="this.replaceWith('👩‍🎨')"></div>
-      <span class="role">Calon Wakil</span>
-      <h3>Khalil</h3>
-      <p class="meta"><b>X PEMASARAN</p>
+
+    <div class="titlebox">
+      <svg class="crown" viewBox="0 0 76 52" fill="#fff" stroke="#12275a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M6 44 L12 12 L26 28 L38 6 L50 28 L64 12 L70 44 Z"/></svg>
+      <svg class="swoosh" viewBox="0 0 400 190" fill="none" aria-hidden="true"><path d="M18 120 C0 60 120 18 260 22 C360 24 392 54 380 82" stroke="#ffc928" stroke-width="7" stroke-linecap="round"/><path d="M60 168 C150 184 300 170 372 118" stroke="#ffc928" stroke-width="7" stroke-linecap="round"/></svg>
+      <h1>Calon Ketua & Wakil OSIS</h1>
+      <h2>Paslon <b>2</b></h2>
+    </div>
+
+    <div class="duo">
+      <div class="pp">
+        <span class="note hand">Berani punya ide!</span>
+        <div class="frame"><img data-base="ketuaa" data-fallback="🧑‍🎓" alt="Foto calon ketua"></div>
+        <span class="role">Ketua OSIS</span>
+        <div class="plate"><h3>Selda R.</h3><span>XI MPLB</span></div>
+      </div>
+      <div class="pp">
+        <span class="note hand">Aksi nyata!</span>
+        <div class="frame"><img data-base="wakill" data-fallback="👨‍🎓" alt="Foto calon wakil"></div>
+        <span class="role">Wakil Ketua OSIS</span>
+        <div class="plate"><h3>M.Khalil</h3><span>X Pemasaran</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="sec">
-    <h2>Visi</h2>
-    <div class="visi"><p>Menjadikan OSIS sebagai ruang tumbuh bagi siswa untuk berani punya ide, berani berkarya, dan berani membawa perubahan.</p></div>
-  </section>
+  <!-- ===== ISI ===== -->
+  <section class="paper">
 
-  <section class="sec">
-    <h2>Misi</h2>
-    <ol class="misi">
-      <li>Membuka ruang bagi siswa untuk menyampaikan ide, kritik, dan aspirasi tanpa merasa takut atau sungkan.</li>
-      <li>Menghadirkan kegiatan yang lebih kreatif, seru, dan relevan dengan minat siswa.</li>
-      <li>Membangun hubungan yang lebih dekat antara OSIS, siswa, dan sekolah.</li>
-      <li>Mendorong setiap siswa untuk berani menunjukkan bakat, potensi, dan kreativitasnya.</li>
-      <li>Membiasakan OSIS bekerja dengan aksi nyata, bukan hanya rencana.</li>
-    </ol>
-  </section>
+    <div class="cols">
+      <div>
+        <div class="hd">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#12275a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 24C9 13 17 8 24 8s15 5 21 16c-6 11-14 16-21 16S9 35 3 24Z"/><circle cx="24" cy="24" r="8" fill="#12275a"/><circle cx="27" cy="21" r="2.5" fill="#fff" stroke="none"/></svg>
+          <h2>Visi</h2>
+        </div>
+        <p class="visi">Menjadikan OSIS sebagai ruang tumbuh bagi siswa untuk berani punya ide, berani berkarya, dan berani membawa perubahan.</p>
+        <span class="visi-note hand">Berani Berubah, Berani Berkarya!</span>
+      </div>
 
-  <section class="sec">
-    <h2>Program Kerja</h2>
+      <div>
+        <div class="hd">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#12275a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="27" r="16"/><circle cx="21" cy="27" r="9"/><circle cx="21" cy="27" r="2.5" fill="#12275a"/><path d="M21 27 40 8M34 6l2 6 6 2"/></svg>
+          <h2>Misi</h2>
+        </div>
+        <ol class="misi">
+          <li>Membuka ruang bagi siswa untuk menyampaikan ide, kritik, dan aspirasi tanpa merasa takut atau sungkan.</li>
+          <li>Menghadirkan kegiatan yang lebih kreatif, seru, dan relevan dengan minat siswa.</li>
+          <li>Membangun hubungan yang lebih dekat antara OSIS, siswa, dan sekolah.</li>
+          <li>Mendorong setiap siswa untuk berani menunjukkan bakat, potensi, dan kreativitasnya.</li>
+          <li>Membiasakan OSIS bekerja dengan aksi nyata, bukan hanya rencana.</li>
+        </ol>
+      </div>
+    </div>
+
     <div class="proker">
-      <div class="pk">
-        <h3><span>1</span>Green School Challenge 🌱</h3>
-        <p>Gerakan menjaga lingkungan sekolah dengan cara yang tidak membosankan.</p>
-        <div class="tags"><span>🧴 Bring Your Own Bottle</span><span>🧹 Jumat Bersih</span><span>♻️ Pemilahan Sampah</span><span>⭐ Tukar Sampah dengan Poin</span></div>
+      <div class="hd">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#12275a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="8" width="30" height="34" rx="5"/><path d="M18 5h12v7H18zM16 23h16M16 31h10"/></svg>
+        <h2>Program Kerja</h2>
       </div>
-      <div class="pk">
-        <h3><span>2</span>Student Voice 🗣️</h3>
-        <p>Kotak aspirasi versi modern. Siswa bisa menyampaikan kritik, saran, atau ide lewat Google Form + QR Code yang ditempel di sekolah, atau dengan membuat kotak aspirasi.</p>
-        <div class="flow"><span>Scan QR</span><i>→</i><span>Isi Form</span><i>→</i><span>OSIS Rekap</span><i>→</i><span>Disampaikan</span></div>
-        <div class="note">➡️ OSIS merekap dan menyampaikan hasilnya secara berkala.</div>
-      </div>
-      <div class="pk">
-        <h3><span>3</span>Kreativitas Siswa 📱</h3>
-        <p>Siswa mengirimkan poster digital, foto kegiatan positif, atau karya kreatif untuk dipajang di media sosial resmi sekolah, dengan izin pihak sekolah.</p>
-        <div class="note">💡 Bisa dilakukan secara online tanpa mengumpulkan semua siswa.</div>
+      <div class="pgrid">
+        <div class="pk"><span class="no">1</span>
+          <h3>Green School Challenge 🌱</h3>
+          <p>Gerakan menjaga lingkungan sekolah dengan cara yang tidak membosankan.</p>
+          <div class="tags"><span>🧴 Bring Your Own Bottle</span><span>🧹 Jumat Bersih</span><span>♻️ Pemilahan Sampah</span><span>⭐ Tukar Sampah dengan Poin</span></div>
+        </div>
+        <div class="pk"><span class="no">2</span>
+          <h3>Student Voice 🗣️</h3>
+          <p>Kotak aspirasi versi modern lewat Google Form + QR Code yang ditempel di sekolah, atau dengan membuat kotak aspirasi.</p>
+          <div class="flow"><span>Scan QR</span><i>›</i><span>Isi Form</span><i>›</i><span>OSIS Rekap</span></div>
+          <div class="tip">OSIS merekap dan menyampaikan hasilnya secara berkala.</div>
+        </div>
+        <div class="pk"><span class="no">3</span>
+          <h3>Kreativitas Siswa 📱</h3>
+          <p>Siswa mengirimkan poster digital, foto kegiatan positif, atau karya kreatif untuk dipajang di media sosial resmi sekolah, dengan izin pihak sekolah.</p>
+          <div class="tip">Bisa dilakukan secara online tanpa mengumpulkan semua siswa.</div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <div class="cta">
-    <h2>Suaramu, Perubahan Kita!</h2>
-    <p>Gunakan hak pilihmu dengan bijak 💖</p>
-    <span class="tag">COBLOS NO. 2</span>
-  </div>
+    <div class="cta">
+      <div class="hand">Suaramu, Perubahan Kita!<small>Gunakan hak pilihmu dengan bijak 💙</small></div>
+      <div class="badge">COBLOS NO. 2</div>
+    </div>
+
+    <svg class="wave" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46V26C60 4 110 4 170 20s120 14 230-10V46Z" fill="#12275a"/></svg>
+  </section>
 
   <footer>
+    <div class="spaced">CALON OSIS SMK PGRI 2 CIANJUR</div>
     <div class="credit">
-      <div class="logo"><img src="orbixstudios.png" alt="Logo Orbix Studios" onerror="this.replaceWith(document.getElementById('logoFallback').content.cloneNode(true))"></div>
+      <div class="logo"><img data-base="orbixstudios" data-fallback="#logoFallback" alt="Logo Orbix Studios"></div>
       <div class="t"><small>Created by</small><b>Orbix Studios</b></div>
     </div>
     <p>© 2026 Orbix Studios</p>
@@ -182,5 +259,23 @@ footer p{margin-top:12px;font-size:.72rem;opacity:.6}
   </svg>
 </template>
 
+<script>
+// Otomatis mencoba beberapa format file (jpg, jpeg, png, webp) untuk tiap gambar
+(function(){
+  var exts=['jpg','jpeg','png','webp','JPG','JPEG','PNG'];
+  document.querySelectorAll('img[data-base]').forEach(function(img){
+    var i=0,base=img.dataset.base,fb=img.dataset.fallback;
+    img.onerror=function(){
+      i++;
+      if(i<exts.length){img.src=base+'.'+exts[i];return}
+      img.onerror=null;
+      if(fb==='remove'){img.remove()}
+      else if(fb&&fb.charAt(0)==='#'){img.replaceWith(document.querySelector(fb).content.cloneNode(true))}
+      else if(fb){img.replaceWith(document.createTextNode(fb))}
+    };
+    img.src=base+'.'+exts[0];
+  });
+})();
+</script>
 </body>
 </html>
